@@ -1,12 +1,24 @@
-# React + Vite
+# Open-Trivia!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a playable game to test your trivia knowledge.
+If you would like to test this code then just clone repository.
+After you can run on your localhost using these commands in terminal
 
-Currently, two official plugins are available:
+### Change directory to the project location
+```cd ./[to the project location]```
+### Execute files into your localhost 
+```npm run dev```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### You should be hosting this locally on 
+http://localhost:5173/
 
-## Expanding the ESLint configuration
+(if not then check configurations or settings from vite website)
+# How to play
+1) Press play in the middle of the screen
+2) Fill out your name and question to select your test
+3) Press Submit to start the trivia
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## If you'd like to play, then I'll have a running website later.
+- Made with React JS
+- API - https://opentdb.com/api.php (Free Api for trivia questions)
+- Vite Framework
