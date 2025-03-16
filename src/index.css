@@ -1,0 +1,22 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+
+  --Background-color: rgba(1, 28, 39, 1);
+  --secondary-background-color: rgba(43, 45, 66, 1);
+
+  --text-color: rgba(254, 206, 233, 1);
+  --accent-color: rgba(208, 219, 151, 1);
+  --secondary-accent-color: rgba(175, 93, 99, 1);
+
+  --success-color: rgba(4, 167, 119, 1);
+  --failed-color: rgba(255, 49, 46);
+}
+
+* {
+  background-color: var(--Background-color);
+  color: var(--text-color);
+}
