@@ -10,15 +10,18 @@ export default function EnterName({ name, setName, fade, setFade, setShow, flag 
     }, 1000);
   }, [flag]);
 
-  const handleNameSubmit = (e) => {
-    e.preventDefault();
+  const handleNameSubmit = (e) => {//Just in case user presses Enter on the keyboard when focused on the input
     if (e.key === "Enter") {
       handleSubmit();
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleClick = (e) => { //Handling button press and prevent refresh of the screen.
+    e.preventDefault();
+    handleSubmit();
+  }
+
+  const handleSubmit = () => {//processess and sees if name is added or not.
     if (!nameReference.current.value.trim()) {
       alert("Add your name and press enter");
       return;
@@ -37,17 +40,19 @@ export default function EnterName({ name, setName, fade, setFade, setShow, flag 
     <div className={`inputContainer ${fade ? "fade-out" : "fade-in"}`}>
       <label className="inputLabel">Name:</label>
       <input
-        ref={nameReference} // ✅ Attach ref correctly
+        ref={nameReference}
         type="text"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={(e) => {
+          setName(e.target.value)
+        }}
         style={{ backgroundColor: "white", color: "black" }}
-        onKeyDown={handleNameSubmit} // ✅ Fixed function call
+        onKeyDown={handleNameSubmit}
         required
       />
       {showHelpText && (
         <span className="help-text fade-in">
-          <button className="enterNameBtn" onClick={handleSubmit}>Press Enter</button>
+          <button className="enterNameBtn" onClick={handleClick}>Press Enter</button>
         </span>
       )}
     </div>
