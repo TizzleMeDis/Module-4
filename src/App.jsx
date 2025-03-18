@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import { WelcomeText, Setup, Questionnaire, Header } from "./components";
+import {
+  WelcomeText,
+  Setup,
+  Questionnaire,
+  Header,
+  GameCalculations,
+} from "./components";
 import "./App.css";
 
 function App() {
@@ -12,6 +18,20 @@ function App() {
   const [category, setCategory] = useState(0);
   const [difficulty, setDifficulty] = useState("any");
   const [qType, setQType] = useState("multiple");
+
+  const [questions, setQuestions] = useState([]);
+  const [currentQ, setCurrentQ] = useState(0);
+  const [answers, setAnswers] = useState(0);
+
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
+  const headerSettings = {
+    setFinished,
+    setPlay,
+    setCurrentQ,
+    setAnswers,
+  };
 
   const gameState = {
     flag,
@@ -29,11 +49,6 @@ function App() {
     setQType,
   };
 
-  const API_URL = "https://opentdb.com/api.php";
-  const [questions, setQuestions] = useState([]);
-  const [currentQ, setCurrentQ] = useState(0);
-  const [answers, setAnswers] = useState(0);
-
   const questionState = {
     questions,
     setQuestions,
@@ -41,15 +56,24 @@ function App() {
     setCurrentQ,
     answers,
     setAnswers,
+    setFinished,
   };
 
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
+  const answersState = {
+    qAmount,
+    answers,
+    setCurrentQ,
+    setQuestions,
+    setAnswers,
+    setPlay,
+    setFinished,
+  };
+
+  const API_URL = "https://opentdb.com/api.php";
   //----------- fetch for data from trivia data base -----------//
   useEffect(() => {
     const fetchData = async () => {
       if (!play) return;
-
       try {
         let url = `${API_URL}?amount=${qAmount}`;
         if (category != 0) {
@@ -61,6 +85,8 @@ function App() {
         if (qType != "any") {
           url += `&type=${qType}`;
         }
+
+        console.log(`Fetching from ${url}`);
         const response = await fetch(url);
         const data = await response.json();
         console.log("data break down: ", data);
@@ -77,22 +103,35 @@ function App() {
 
   const handlePlay = () => {
     console.log("Playing Game...");
-    setFlag(true);
+    setFade(true);
+    setTimeout(() => {
+      setFlag(true);
+    }, 300);
   };
-
+  const [fade, setFade] = useState(false); //fading animation
   return (
     <>
       <div className="headerContainer">
-        {play && <Header />}
+        {play && <Header {...headerSettings} />}
         {!play && <WelcomeText />}
-        {/* Conditionally render input field when flag is true */}
+        {/* Setup of Game = flag is true and play is NOT true */}
         {flag && !play && <Setup {...gameState} />}
-        {play && <Questionnaire {...questionState} />}
-        {/* Conditionally render button when flag is false */}
-        {!flag && <button onClick={handlePlay}>Play Game?</button>}
+        {/* Playing game = play is true and finished is NOT true */}
+        {play && !finished && <Questionnaire {...questionState} />}
+        {/* Render when finished is true */}
+        {finished && <GameCalculations {...answersState} />}
+
+        {/* Render play button = flag is false */}
+        {!flag && (
+          <button
+            onClick={handlePlay}
+            className={`${fade ? "fade-out" : "fade-in"}`}
+          >
+            Play Game?
+          </button>
+        )}
       </div>
     </>
   );
 }
-
 export default App;

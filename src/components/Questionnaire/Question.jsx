@@ -50,14 +50,6 @@ export default function Question({ index, element, setCurrentQ, setAnswers }) {
             ></button>
           </li>
         ))}
-
-        {/* <li className="answer" key={`correct-${index}`}>
-          <button
-            data-answer={element.correct_answer}
-            onClick={handleSelectAnswer}
-            dangerouslySetInnerHTML={{ __html: element.correct_answer }}
-          ></button> 
-        </li>*/}
       </ul>
     </div>
   );

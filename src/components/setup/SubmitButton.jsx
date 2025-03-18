@@ -1,10 +1,12 @@
 import React from "react";
 
-export default function SubmitButton({ play, setPlay }) {
+export default function SubmitButton({ play, setPlay}) {
+
+
   const handlePlayButton = (e) => {
     e.preventDefault();
-    console.log(`Play the game now ${play}`)
-    setPlay(!play)
+    console.log(`Playing the game now`)
+    setPlay(true)
   }
   return (
     <div className="inputContainer">

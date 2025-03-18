@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .navbar {
   position: absolute;
   top: 0;
@@ -22,11 +26,8 @@
 .link:nth-child(2), .link:nth-child(3), .link:nth-child(4) {
   padding: 0.5rem 1rem;
   border-radius: .7rem;
-  transition: all ease 200ms;
 }
-.link:nth-child(2):hover, .link:nth-child(3):hover, .link:nth-child(4):hover {
-  background-color: var(--secondary-background-color);
-}
+
 
 .headerContainer {
   display: flex;
@@ -96,4 +97,16 @@ button {
 button:hover {
   background-color: var(--secondary-background-color);
   box-shadow: 0px 0px 4px var(--accent-color);
+}
+
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
