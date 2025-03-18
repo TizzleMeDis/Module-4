@@ -28,6 +28,11 @@ a {
   border-radius: .7rem;
 }
 
+.answer-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
 
 .headerContainer {
   display: flex;
@@ -85,7 +90,13 @@ a {
   gap: 1rem;
 }
 
-button {
+.enterNameBtn {
+  padding: 0.25rem;
+  border: none;
+  transition: all ease 300ms;
+}
+
+.generalBtn {
   padding: 1rem;
   text-align: center;
   font-size: clamp(1.2rem, 1.4vw, 1.5rem);
@@ -94,7 +105,7 @@ button {
   transition: all ease 300ms;
 }
 
-button:hover {
+.generalBtn:hover, .enterNameBtn:hover {
   background-color: var(--secondary-background-color);
   box-shadow: 0px 0px 4px var(--accent-color);
 }

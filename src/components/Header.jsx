@@ -26,9 +26,9 @@ export default function Header({setFinished, setPlay, setCurrentQ, setAnswers}) 
     <div className={`navbarContainer`}>
       <ul className='navbar'>
         <li className='link'><a href='./'><HeaderLogo /></a></li>
-        <li className='link'><button onClick={handleAutoComplete}>Finish</button></li>
-        <li className='link'><button onClick={handleRefresh}>Restart</button></li>
-        <li className='link'><button onClick={handleHelpScreen}>Help</button></li>
+        <li className='link'><button className="generalBtn" onClick={handleAutoComplete}>Finish</button></li>
+        <li className='link'><button className="generalBtn" onClick={handleRefresh}>Restart</button></li>
+        <li className='link'><button className="generalBtn" onClick={handleHelpScreen}>Help</button></li>
       </ul>
 
       <div className={`help-screen${visible ? " invisible" : ""}`}>

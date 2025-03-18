@@ -22,8 +22,7 @@ export default function Questionnaire({
   return (
     <div>
       {currentQ == questions.length - 1 && <h1>Last Question!</h1>}
-      {currentQ != questions.length - 1 && <h2>{name} {currentQ}/{questions.length}</h2>}
-      
+      {currentQ != questions.length - 1 && <h2>{name} {currentQ + 1}/{questions.length}</h2>}
       {questions.map(
         (element, index) =>
           currentQ == index && (

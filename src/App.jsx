@@ -125,7 +125,7 @@ function App() {
         {!flag && (
           <button
             onClick={handlePlay}
-            className={`${fade ? "fade-out" : "fade-in"}`}
+            className={`generalBtn ${fade ? "fade-out" : "fade-in"}`}
           >
             Play Game?
           </button>

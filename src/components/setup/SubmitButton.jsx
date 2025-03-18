@@ -10,7 +10,7 @@ export default function SubmitButton({ play, setPlay}) {
   }
   return (
     <div className="inputContainer">
-      <button className="submitBtn" onClick={handlePlayButton}>
+      <button className="generalBtn submitBtn" onClick={handlePlayButton}>
         Submit
       </button>
     </div>

@@ -4,7 +4,6 @@ export default function Question({ index, element, setCurrentQ, setAnswers }) {
   const handleSelectAnswer = (e) => {
     e.preventDefault();
     console.log(`Clicked ${e.target.dataset.answer}`);
-    setCurrentQ((prev) => prev + 1);
 
     if (e.target.dataset.answer === element.correct_answer) {
       console.log("Correct!");
@@ -14,6 +13,11 @@ export default function Question({ index, element, setCurrentQ, setAnswers }) {
     }
   };
 
+  const handleNextQuestion = (e) => {
+    e.preventDefault();
+    console.log("Next Question");
+    setCurrentQ((prev) => prev + 1);
+  };
   const answerPrompts = (element) => {
     /**
      * need to randomize the order of the question's answers
@@ -24,12 +28,13 @@ export default function Question({ index, element, setCurrentQ, setAnswers }) {
      */
 
     const answerArray = [...element.incorrect_answers, element.correct_answer];
-    console.log(`Correct Answer: ${answerArray[answerArray.length-1]}`)
-    for (let i = answerArray.length - 1; i > 0; i--) { // Fisher-Yates-Shuffle
+    console.log(`Correct Answer: ${answerArray[answerArray.length - 1]}`);
+    for (let i = answerArray.length - 1; i > 0; i--) {
+      // Fisher-Yates-Shuffle
       let j = Math.floor(Math.random() * (i + 1));
       [answerArray[i], answerArray[j]] = [answerArray[j], answerArray[i]];
     }
-    console.log(answerArray)
+    console.log(answerArray);
     return answerArray;
   };
   return (
@@ -44,6 +49,7 @@ export default function Question({ index, element, setCurrentQ, setAnswers }) {
         {answerPrompts(element).map((answer, i) => (
           <li className="answer" key={`${i}`}>
             <button
+              className="generalBtn"
               data-answer={answer}
               onClick={handleSelectAnswer}
               dangerouslySetInnerHTML={{ __html: answer }}
@@ -51,6 +57,13 @@ export default function Question({ index, element, setCurrentQ, setAnswers }) {
           </li>
         ))}
       </ul>
+
+      <div className="answer-buttons">
+        <button className="generalBtn">Submit Answer</button>
+        <button className="generalBtn" onClick={handleNextQuestion}>
+          Next Question
+        </button>
+      </div>
     </div>
   );
 }
