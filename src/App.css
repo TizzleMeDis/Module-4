@@ -110,3 +110,32 @@ button:hover {
   opacity: 1;
   transition: opacity 0.5s ease;
 }
+
+.help-screen {
+  position: absolute;
+  visibility: visible;
+
+  opacity: 1;
+  inset: 0;
+  margin: auto;
+  width: 60vw;  
+  height: 60vh; 
+
+  border-radius: 15px;
+  padding: 3rem;
+
+  background-color: var(--secondary-background-color);
+  transition: all ease 0.5s;
+}
+
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.help-screen-list, .help-screen-title, .help-screen-text {
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  list-style-type:none;
+  color: var(--secondary-accent-color);
+  background-color: var(--secondary-background-color);
+}
