@@ -4,6 +4,11 @@ export default function EnterName({ name, setName, fade, setFade, setShow, flag 
   const [showHelpText, setShowText] = useState(false)
   const handleNameSubmit = (e) => {
     if (e.key === "Enter") {
+
+      if(e.target.value == "") {
+        alert("Add your name and press enter")
+        return
+      }
       e.preventDefault(); // Prevents form reload
 
       setFade(true); // Start fade-out

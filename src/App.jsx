@@ -54,7 +54,7 @@ function App() {
     setQuestions,
     currentQ,
     setCurrentQ,
-    answers,
+    name,
     setAnswers,
     setFinished,
   };
