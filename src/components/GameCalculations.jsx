@@ -11,7 +11,6 @@ export default function GameCalculations({
 }) {
   const handlePlay = (e) => {
     e.preventDefault();
-
     setPlay(true);
     setFinished(false);
     setCurrentQ(0);
@@ -19,17 +18,17 @@ export default function GameCalculations({
   };
   return (
     <div>
-      {answers/qAmount > qAmount*.7 && (
+      {answers >= Math.floor(qAmount*.70) && (
         <h1>
           Congrats! You completed {answers}/{qAmount}
         </h1>
       )}
-      {answers > 2 && answers < 7 && (
+      {answers >= Math.floor(qAmount*.30) && answers < Math.floor(qAmount*.70) && (
         <h1>
           Almost! You completed {answers}/{qAmount}
         </h1>
       )}
-      {answers < 3 && (
+      {answers < Math.floor(qAmount*.30) && (
         <h1>
           Better luck next time! You completed {answers}/{qAmount}
         </h1>
