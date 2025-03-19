@@ -30,19 +30,17 @@ export default function Question({ index, element, setCurrentQ, setAnswers }) {
     }
 
     console.log(
-      `Clicked ${
+      `${
         selected.value == element.correct_answer
-          ? " which is correct!"
+          ? " CORRECT!"
           : " WRONG!"
       }`
     );
 
     setAnsweredQuestion(true)
     if (selected.value === element.correct_answer) {
-      console.log("Correct!");
       setAnswers((prevAnswer) => prevAnswer + 1);
     } else {
-      console.log("Incorrect..");
       setAnswers((prevAnswer) => prevAnswer) //Just to cause a rerender
     }
   }

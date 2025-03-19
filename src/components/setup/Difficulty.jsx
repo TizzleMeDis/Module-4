@@ -4,9 +4,6 @@ import styles from "../styles/Inputs.module.css"
 export default function Difficulty({setDifficulty}) {
   const handleSelectDifficulty = (e) => {
     const selectedText = e.target.options[e.target.selectedIndex].text;
-    console.log(
-      `Difficulty set to ${selectedText} \nValue is equal to ${e.target.value}`
-    );
     setDifficulty(e.target.value);
   };
 

@@ -13,7 +13,7 @@ export default function QuestionAmount({ qAmount, setQAmount }) {
       if (!isNaN(num) && num > 0) {
         console.log("Question amount set to:", num);
       } else {
-        console.log("Invalid input. Enter a valid number 1 or above.");
+        alert("Invalid input. Enter a valid number 1 or above.");
       }
     }
   };

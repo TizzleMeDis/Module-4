@@ -89,7 +89,6 @@ function App() {
         console.log(`Fetching from ${url}`);
         const response = await fetch(url);
         const data = await response.json();
-        console.log("data break down: ", data);
 
         setQuestions(data.results);
       } catch (err) {
@@ -102,7 +101,6 @@ function App() {
   //------------------------------------------------------------*/
 
   const handlePlay = () => {
-    console.log("Playing Game...");
     setFade(true);
     setTimeout(() => {
       setFlag(true);

@@ -4,7 +4,7 @@ import styles from "../styles/Inputs.module.css"
 export default function SelectCategory({setCategory}) {
     const handleSelectCategory = (e) => {
         const selectedText = e.target.options[e.target.selectedIndex].text;
-        console.log(`Category set to ${selectedText} \nValue is equal to ${e.target.value}`)
+        console.log(`Category chosen: ${selectedText}`)
         setCategory(e.target.value)
     }
     const categoryOptions = [

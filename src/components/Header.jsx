@@ -15,7 +15,7 @@ export default function Header({setFinished, setPlay, setCurrentQ, setAnswers}) 
   }
 
   const handleAutoComplete = () => {
-    console.log("Finished from link")
+    console.log("Finished..")
     setFinished(true);
   }
   
@@ -35,10 +35,10 @@ export default function Header({setFinished, setPlay, setCurrentQ, setAnswers}) 
       <div className={`${styles.helpScreen} ${visible ? styles.invisible : ""}`}>
         <h1 className={styles.helpScreenTitle}>Help Screen</h1>
         <ul className={styles.helpScreenList}>
-          <li><p className={styles.helpScreenText}>Want to reset the settings just press the logo Open-Trivia</p></li>
-          <li><p className={styles.helpScreenText}>If you want to restart the quiz just hit restart to jump you to the beginning</p></li>
-          <li><p className={styles.helpScreenText}>Lastly if you're done just click the Finish button to complete the quiz and see how many you got.</p></li>
-          <li><p className={styles.helpScreenText}>If you're done with the help screen just click help.</p></li>
+          <li><p className={styles.helpScreenText}>Want to <em>reset the settings with new test.</em> Just <em>press</em> the <em>logo <b>Open-Trivia</b></em></p></li>
+          <li><p className={styles.helpScreenText}>If you want to <em>restart the quiz</em> just <em>hit <b>restart</b></em> to jump you to the beginning</p></li>
+          <li><p className={styles.helpScreenText}>Lastly if you're done just click the <em>Finish button</em> to <em>complete the <b>quiz</b></em> and see how many you got.</p></li>
+          <li><p className={styles.helpScreenText}><em>If</em> you're <em>done</em> with the help screen just <em>Click <b>help.</b></em></p></li>
         </ul>
       </div>
     </div>
