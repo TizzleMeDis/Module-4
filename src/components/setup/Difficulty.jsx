@@ -9,14 +9,17 @@ export default function Difficulty({setDifficulty}) {
     );
     setDifficulty(e.target.value);
   };
+
+  const difficultyOptions = ["Easy", "Medium", "Hard"]
+  
   return (
     <div className={styles.inputContainer}>
       <label>Difficulty:</label>
       <select name="type" onChange={handleSelectDifficulty}>
         <option value="">Any Difficulty</option>
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
+        {difficultyOptions.map((value, index) => (
+          <option key={index} value={value.toLowerCase()}>{value}</option>
+        ))}
       </select>
     </div>
   );
