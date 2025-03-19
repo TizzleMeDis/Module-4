@@ -27,6 +27,6 @@ export default function HeaderLogo() {
     ]; // Color pallete generated for special opener
 
     return (
-        <h1 className='logo'>{triviaHeader()}</h1>
+        <h1>{triviaHeader()}</h1>
     )
 }

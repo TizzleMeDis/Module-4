@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./styles/Inputs.module.css"
 
 export default function GameCalculations({
   qAmount,
@@ -6,7 +7,6 @@ export default function GameCalculations({
   setPlay,
   setFinished,
   setCurrentQ,
-  setQuestions,
   setAnswers,
 }) {
   const handlePlay = (e) => {
@@ -33,8 +33,8 @@ export default function GameCalculations({
           Better luck next time! You completed {answers}/{qAmount}
         </h1>
       )}
-      <div className="inputContainer">
-        <button onClick={handlePlay}>Play Again?</button>
+      <div className={styles.inputContainer}>
+        <button className={styles.generalBtn} onClick={handlePlay}>Try Again?</button>
       </div>
     </div>
   );

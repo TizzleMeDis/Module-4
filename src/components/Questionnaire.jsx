@@ -20,9 +20,9 @@ export default function Questionnaire({
     setFinished(true);
   };
   return (
-    <div>
+    <form>
       {currentQ == questions.length - 1 && <h1>Last Question!</h1>}
-      {currentQ != questions.length - 1 && <h2>{name} {currentQ + 1}/{questions.length}</h2>}
+      {currentQ != questions.length - 1 && <h2>{name} your on question: {currentQ + 1}/{questions.length}</h2>}
       {questions.map(
         (element, index) =>
           currentQ == index && (
@@ -35,6 +35,6 @@ export default function Questionnaire({
             />
           )
       )}
-    </div>
+    </form>
   );
 }

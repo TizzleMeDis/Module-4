@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import styles from "../styles/Inputs.module.css"
 
 export default function EnterName({ name, setName, fade, setFade, setShow, flag }) {
   const [showHelpText, setShowText] = useState(false);
@@ -37,8 +38,8 @@ export default function EnterName({ name, setName, fade, setFade, setShow, flag 
   };
 
   return (
-    <div className={`inputContainer ${fade ? "fade-out" : "fade-in"}`}>
-      <label className="inputLabel">Name:</label>
+    <div className={`${styles.inputContainer} ${fade ? "fade-out" : "fade-in"}`}>
+      <label>Name:</label>
       <input
         ref={nameReference}
         type="text"
@@ -51,8 +52,8 @@ export default function EnterName({ name, setName, fade, setFade, setShow, flag 
         required
       />
       {showHelpText && (
-        <span className="help-text fade-in">
-          <button className="enterNameBtn" onClick={handleClick}>Press Enter</button>
+        <span className="fade-in">
+          <button className={styles.enterNameBtn} onClick={handleClick}>Press Enter</button>
         </span>
       )}
     </div>

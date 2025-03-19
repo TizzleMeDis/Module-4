@@ -1,6 +1,7 @@
 import React from "react";
+import styles from "../styles/Inputs.module.css"
 
-export default function SubmitButton({ play, setPlay}) {
+export default function SubmitButton({setPlay}) {
 
 
   const handlePlayButton = (e) => {
@@ -9,8 +10,8 @@ export default function SubmitButton({ play, setPlay}) {
     setPlay(true)
   }
   return (
-    <div className="inputContainer">
-      <button className="generalBtn submitBtn" onClick={handlePlayButton}>
+    <div className={styles.inputContainer}>
+      <button className={`${styles.generalBtn} ${styles.submitBtn}`} onClick={handlePlayButton}>
         Submit
       </button>
     </div>

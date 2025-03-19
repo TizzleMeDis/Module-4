@@ -7,6 +7,7 @@ import {
   GameCalculations,
 } from "./components";
 import "./App.css";
+import styles from './components/styles/Welcome.module.css';
 
 function App() {
   const [flag, setFlag] = useState(false); // if the user started the game.
@@ -63,7 +64,6 @@ function App() {
     qAmount,
     answers,
     setCurrentQ,
-    setQuestions,
     setAnswers,
     setPlay,
     setFinished,
@@ -111,7 +111,7 @@ function App() {
   const [fade, setFade] = useState(false); //fading animation
   return (
     <>
-      <div className="headerContainer">
+      <div className={styles.headerContainer}>
         {play && <Header {...headerSettings} />}
         {!play && <WelcomeText />}
         {/* Setup of Game = flag is true and play is NOT true */}
@@ -125,7 +125,7 @@ function App() {
         {!flag && (
           <button
             onClick={handlePlay}
-            className={`generalBtn ${fade ? "fade-out" : "fade-in"}`}
+            className={`${styles.generalBtn} ${fade ? "fade-out" : "fade-in"}`}
           >
             Play Game?
           </button>

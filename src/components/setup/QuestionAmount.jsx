@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../styles/Inputs.module.css"
 
 export default function QuestionAmount({ qAmount, setQAmount }) {
   const handleInputChange = (e) => {
@@ -18,8 +19,8 @@ export default function QuestionAmount({ qAmount, setQAmount }) {
   };
 
   return (
-    <div className="inputContainer">
-      <label className="inputLabel">Amount of Questions:</label>
+    <div className={styles.inputContainer}>
+      <label>Amount of Questions:</label>
       <input
         type="number"
         value={qAmount}

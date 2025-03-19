@@ -1,13 +1,14 @@
 import React from "react";
+import styles from "../styles/Inputs.module.css"
 
-export default function SelectCategory({ category, setCategory }) {
+export default function SelectCategory({setCategory}) {
     const handleSelectCategory = (e) => {
         const selectedText = e.target.options[e.target.selectedIndex].text;
         console.log(`Category set to ${selectedText} \nValue is equal to ${e.target.value}`)
         setCategory(e.target.value)
     }
   return (
-    <div className="inputContainer">
+    <div className={styles.inputContainer}>
       <label className="inputLabel">Category:</label>
       <select
         name="trivia_category"
