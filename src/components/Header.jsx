@@ -3,7 +3,7 @@ import {HeaderLogo} from './header/index'
 import styles from './styles/Navbar.module.css'
 
 export default function Header({setFinished, setPlay, setCurrentQ, setAnswers}) {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(true)
 
   const handleRefresh = () => {
     setPlay(false);
